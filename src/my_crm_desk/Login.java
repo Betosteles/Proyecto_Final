@@ -171,6 +171,7 @@ public class Login extends javax.swing.JInternalFrame {
         }
         
         conexion.Cerrar();
+        //h
         
                
     }//GEN-LAST:event_jButton1ActionPerformed
