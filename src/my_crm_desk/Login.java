@@ -158,9 +158,9 @@ public class Login extends javax.swing.JInternalFrame {
         
         try {
             if(!isResultSetEmpty(resultSet)){
-            if(resultSet.getString(1).equals(this.userField.getText())){
+            if(resultSet.getString(1).equals(this.userField.getText()) && isPasswordCorrect(pass,resultSet.getString(2).toCharArray())){
                 
-                JOptionPane.showMessageDialog(this, isPasswordCorrect(pass,resultSet.getString(2).toCharArray()));
+                JOptionPane.showMessageDialog(this, "Correcto");
                 
             }}
             else{
@@ -171,7 +171,7 @@ public class Login extends javax.swing.JInternalFrame {
         }
         
         conexion.Cerrar();
-        //h
+        
         
                
     }//GEN-LAST:event_jButton1ActionPerformed

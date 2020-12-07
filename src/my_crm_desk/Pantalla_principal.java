@@ -30,40 +30,38 @@ public class Pantalla_principal extends javax.swing.JFrame {
         return jDesktopPane1;
     }
 
-    public JMenuBar getjMenuBar1() {
-        return jMenuBar1;
-    }
 
-    
-    
-    
-    
-    
-    
     public Pantalla_principal() {
         initComponents();
         
         con.setURL("C:/Textos/my_desk");
         
         log=new Login(this);
+       
         centerJF(this);
-                
+ 
+        
+  
         this.jDesktopPane1.add(log);
-        //this.jMenuBar1.setVisible(false);
+        
         centerJIF(log);
-        
-        
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public String getUser() {
+        return user;
     }
     
-   
     
+    
+    String user;
     Conecto_sql con = new Conecto_sql();
-    
-    //public Conecto_sql cone() {
-    //    return con;
-   // }
-    
     Login log;
+
+ 
 
     public void centerJIF(JInternalFrame jif) {
     Dimension desktopSize = this.getSize();
@@ -79,6 +77,11 @@ public class Pantalla_principal extends javax.swing.JFrame {
         jf.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
     }
     
+    public void AddJIFtoMain(JInternalFrame jif){
+        
+        this.jDesktopPane1.add(jif);
+    
+    }
     
     
     /**
@@ -91,9 +94,6 @@ public class Pantalla_principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MyCRM Desk");
@@ -113,16 +113,8 @@ public class Pantalla_principal extends javax.swing.JFrame {
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 674, Short.MAX_VALUE)
+            .addGap(0, 696, Short.MAX_VALUE)
         );
-
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -180,9 +172,6 @@ public class Pantalla_principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JDesktopPane jDesktopPane1;
     // End of variables declaration//GEN-END:variables
 }
